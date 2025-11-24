@@ -1,6 +1,3 @@
-// في أعلى ملف index.js:
-require('dotenv').config(); 
-// ... بقية الكود
 const express = require("express");
 const cors = require("cors");
 const user = require("./routes/userAuthentication");
