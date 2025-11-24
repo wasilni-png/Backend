@@ -1,6 +1,19 @@
 {
+  "name": "roadrider-api",
+  "version": "1.0.0",
+  "description": "RoadRider Backend API using Express and PostgreSQL",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "postgres"
+  ],
   "dependencies": {
-    "nodejs": "^0.0.0",
-    "package": "^1.0.1"
+    "express": "^4.19.2", 
+    "pg": "^8.12.0" 
   }
 }
