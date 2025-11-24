@@ -1,22 +1,21 @@
-
-const pkg=require("pg");
+const pkg = require("pg");
 const { Client } = pkg;
 
-5 const db = new Client({
-6   host: process.env.PGHOST,
-7   port: process.env.PGPORT || 5432, // المنفذ
-8   database: process.env.PGDATABASE,
-9   user: process.env.PGUSER,
-10  password: process.env.PGPASSWORD,
-11 });
-
-db.connect((err, client) => {
-  if (err) {
-    console.error(err);
-    process.exit(1);
-  }
-  console.log("Connected to PostgreSQL!");
+// يتم استخدام process.env لقراءة القيم من Render Environment Variables
+const db = new Client({
+    host: process.env.PGHOST,
+    port: 5432, // يمكنك ترك المنفذ 5432 أو جعله أيضاً متغير بيئة إذا لزم الأمر
+    database: process.env.PGDATABASE,
+    user: process.env.PGUSER,
+    password: process.env.PGPASSWORD,
 });
 
+db.connect((err, client) => {
+    if (err) {
+        console.error("Connection error to PostgreSQL:", err.message);
+        process.exit(1);
+    }
+    console.log("Connected to PostgreSQL successfully!");
+});
 
-module.exports= db;
+module.exports = db;
