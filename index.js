@@ -20,20 +20,19 @@ app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server is running on port ${PORT}`);
 });
 const { Client } = require('pg');
+// *** أضف هذا السطر في أعلى الملف للتأكيد (حتى لو لم يكن لديك ملف .env) ***
+require('dotenv').config();
 
 const db = new Client({
-    user: 'roadrider_user', // اسم المستخدم بين علامتي تنصيص
-    host: 'dpg-d4id4gbe5dus738pee90-a.frankfurt-postgres.render.com', 
-    database: 'roadrider', 
-    password: '0DfLJeCXxlc79yUZtI5z7Iru1FtOt07D',
-    port: 5432,
-    ssl: { rejectUnauthorized: false }
+    user: process.env.PGUSER,
+    host: process.env.PGHOST, // 🔑 يجب أن يكون هذا السطر هو الذي يقرأ PGHOST
+    database: process.env.PGDATABASE,
+    password: process.env.PGPASSWORD,
+    // المنفذ 5432 هو المنفذ القياسي لـ PostgreSQL وهو صحيح
+    port: 5432, 
+    // إذا واجهت مشاكل أمنية في الاتصال لاحقاً، أضف السطر التالي:
+    // ssl: { rejectUnauthorized: false }
 });
 
-// ... باقي الكود ...
-
-db.connect()
-    .then(() => console.log('Connected to PostgreSQL'))
-    .catch(err => console.error('Connection error', err.stack));
-
+// تأكد أنك تقوم بتصدير (export) قاعدة البيانات
 module.exports = db;
