@@ -29,6 +29,4 @@ db.connect((err, client) => {
   console.log("Connected to PostgreSQL!");
 });
 
-});
-
 module.exports = db;
