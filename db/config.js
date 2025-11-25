@@ -1,6 +1,17 @@
-
 const pkg=require("pg");
 const { Client } = pkg;
+const { Client } = require('pg');
+
+const db = new Client({
+    user: 'roadrider_user',
+    host: 'dpg-d4id4gbe5dus738pee90-a.frankfurt-postgres.render.com', 
+    database: 'roadrider',
+    password: '0DfLJeCXxlc79yUZtI5z7Iru1FtOt07D',
+    port: 5432,
+    ssl: { rejectUnauthorized: false } 
+});
+
+module.exports = db;
 
 const db = new Client({
   host: "localhost",
