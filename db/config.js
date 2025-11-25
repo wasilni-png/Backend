@@ -18,8 +18,6 @@ db.connect((err, client) => {
   console.log("Connected to PostgreSQL!");
 });
 
-
-module.exports= db;
 const { Client } = require('pg');
 
 // يجب إزالة هذا السطر إذا كنت تستخدم Hardcoding
