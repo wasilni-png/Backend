@@ -1,28 +1,26 @@
 {
-  "dependencies": {
-    "bcrypt": "^5.1.0",
-    "bcryptjs": "^2.4.3",
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "multer": "^1.4.5-lts.1",
-    "next": "^13.4.4",
-    "nodemon": "^2.0.22",
-    "pg": "^8.11.0",
-    "router": "^1.3.8"
-  },
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "ranjit",
   "license": "ISC",
-  "description": ""
-}
-"dependencies": {
-    "express": "^4.19.2", 
+  "description": "",
+  // 🔑 هذا هو كائن المكتبات الوحيد والنهائي
+  "dependencies": { 
+    "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.19.2", // استخدم 4.19.2 لتوحيد الإصدار
+    "multer": "^1.4.5-lts.1",
+    "next": "^13.4.4", 
+    "nodemon": "^2.0.22",
     "pg": "^8.12.0",
-    "dotenv": "^16.4.5" // 🔑 تأكد من إضافة هذا السطر
-}
+    "router": "^1.3.8",
+    "dotenv": "^16.4.5" // 🔑 إضافة dotenv لضمان التثبيت
+  }
+} // نهاية الملف
