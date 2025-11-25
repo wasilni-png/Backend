@@ -20,4 +20,4 @@ jobs:
 
       - name: Deploy Edge Functions
         run: |
-          supabase functions deploy my-function-name --project-ref <معرف_مشروعك>
+          supabase functions deploy my-function-name --project-ref <omawqpezsdubqpxgrptc>
