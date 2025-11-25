@@ -1,0 +1,6 @@
+pip freeze > requirements.txtcertifi==2025.11.12
+charset-normalizer==3.4.4
+idna==3.11
+novas==3.1.1.6
+requests==2.32.5
+urllib3==2.5.0
