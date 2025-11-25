@@ -19,3 +19,21 @@ const PORT = process.env.PORT || 3000; // استخدام متغير البيئة
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server is running on port ${PORT}`);
 });
+const { Client } = require('pg');
+
+const db = new Client({
+    user: 'roadrider_user', // اسم المستخدم بين علامتي تنصيص
+    host: 'dpg-d4id4gbe5dus738pee90-a.frankfurt-postgres.render.com', 
+    database: 'roadrider', 
+    password: '0DfLJeCXxlc79yUZtI5z7Iru1FtOt07D',
+    port: 5432,
+    ssl: { rejectUnauthorized: false }
+});
+
+// ... باقي الكود ...
+
+db.connect()
+    .then(() => console.log('Connected to PostgreSQL'))
+    .catch(err => console.error('Connection error', err.stack));
+
+module.exports = db;
