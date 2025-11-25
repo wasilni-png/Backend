@@ -1,0 +1,26 @@
+name: Deploy Supabase Edge Functions
+
+on:
+  push:
+    branches:
+      - main  # قم بتغيير main إلى اسم فرعك الرئيسي إذا كان مختلفًا
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Supabase CLI
+        # هذا الإجراء يستخدم بيئة Docker لتثبيت الـ CLI بشكل صحيح على خوادم GitHub
+        uses: supabase/github-action@v1.65.0
+        with:
+          supabase-access-token: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+
+      - name: Deploy Edge Functions
+        run: |
+          # تأكد من أن هذا الأمر يطابق اسم الوظيفة أو الوظائف التي تريد نشرها
+          supabase functions deploy my-function-name --project-ref <معرف_مشروعك>
+        # تأكد من استبدال <معرف_مشروعك> بالمعرف الفعلي من إعدادات Supabase
+
